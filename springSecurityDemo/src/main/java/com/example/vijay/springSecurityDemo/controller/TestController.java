@@ -22,10 +22,10 @@ public class TestController {
 //			new Student("vijay", "vijay@gmail.com",30)
 //			));
 
-	@GetMapping
-	public ResponseEntity<String> getMsg(HttpServletRequest req) {
-		return new ResponseEntity<String>("Welcome to ONO  ->"+req.getSession().getId(), HttpStatus.OK);
-	}
+//	@GetMapping
+//	public ResponseEntity<String> getMsg(HttpServletRequest req) {
+//		return new ResponseEntity<String>("Welcome to ONO  ->"+req.getSession().getId(), HttpStatus.OK);
+//	}
 	
 	@GetMapping("csrf")
 	public CsrfToken getcsrfToken(HttpServletRequest req) {

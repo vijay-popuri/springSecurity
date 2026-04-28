@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.vijay.springSecurityDemo.model.Student;
 import com.example.vijay.springSecurityDemo.service.UserService;
 
 @RestController
-@RequestMapping("users")
 public class UserController {
 
 	@Autowired
@@ -33,6 +33,13 @@ public class UserController {
 	@GetMapping
 	public List<Student> getAllStudents() {
 		return ser.getStudents();
+	}
+
+	@PostMapping("login")
+	public String verify(
+			@RequestParam String email, 
+			@RequestParam String password) {
+		return ser.verify(email, password);
 	}
 
 }
